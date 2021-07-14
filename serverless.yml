@@ -26,7 +26,7 @@ custom:
 
 # you can overwrite defaults here
 #  stage: dev
-#  region: us-east-1
+region: us-east-1
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -167,6 +167,9 @@ resources:
           ## The only exception are files that actually exist e.h. app.js, reset.css
           CustomErrorResponses:
             - ErrorCode: 404
+              ResponseCode: 200
+              ResponsePagePath: /index.html
+            - ErrorCode: 403
               ResponseCode: 200
               ResponsePagePath: /index.html
           DefaultCacheBehavior:
